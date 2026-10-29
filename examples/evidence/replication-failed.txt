@@ -1,0 +1,2 @@
+SYNTHETIC EXAMPLE
+Export request failed: collector unavailable

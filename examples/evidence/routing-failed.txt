@@ -1,0 +1,2 @@
+SYNTHETIC EXAMPLE
+Collector timed out; no new routing observation

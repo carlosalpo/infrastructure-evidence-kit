@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "demo-handoff",
+  "title": "Synthetic infrastructure handoff",
+  "as_of": "2026-10-29T18:00:00Z",
+  "assets": [
+    {
+      "id": "router-edge",
+      "label": "Demo edge router",
+      "kind": "network"
+    },
+    {
+      "id": "compute-a",
+      "label": "Demo compute node",
+      "kind": "compute"
+    },
+    {
+      "id": "storage-a",
+      "label": "Demo storage pool",
+      "kind": "storage"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "routing",
+      "title": "Routing observation",
+      "asset_kind": "network",
+      "max_age_hours": 24
+    },
+    {
+      "id": "backup",
+      "title": "Backup job record",
+      "asset_kind": "network",
+      "max_age_hours": 168
+    },
+    {
+      "id": "capacity",
+      "title": "Capacity export",
+      "asset_kind": "compute",
+      "max_age_hours": 24
+    },
+    {
+      "id": "replication",
+      "title": "Replication job record",
+      "asset_kind": "storage",
+      "max_age_hours": 24
+    }
+  ],
+  "evidence": [
+    {
+      "id": "route-export",
+      "asset_id": "router-edge",
+      "requirement_id": "routing",
+      "path": "routing.txt",
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 0
+    },
+    {
+      "id": "backup-export",
+      "asset_id": "router-edge",
+      "requirement_id": "backup",
+      "path": "backup.txt",
+      "collected_at": "2026-10-29T16:00:00Z",
+      "exit_code": 0
+    },
+    {
+      "id": "capacity-export",
+      "asset_id": "compute-a",
+      "requirement_id": "capacity",
+      "path": "missing.txt",
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 0
+    },
+    {
+      "id": "replication-export",
+      "asset_id": "storage-a",
+      "requirement_id": "replication",
+      "path": "replication.txt",
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 0
+    }
+  ],
+  "findings": [
+    {
+      "id": "capacity-review",
+      "asset_id": "compute-a",
+      "severity": "medium",
+      "title": "Review projected capacity",
+      "observation": "The synthetic export reports 82 percent utilization. A single sample does not establish a trend.",
+      "recommendation": "Review growth history and planned workloads before deciding on expansion.",
+      "evidence_ids": [
+        "capacity-export"
+      ]
+    }
+  ]
+}
