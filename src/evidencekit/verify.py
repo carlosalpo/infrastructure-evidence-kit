@@ -95,6 +95,7 @@ def verify(root):
         try:
             content = read_beneath(root, name, metadata["bytes"])
         except FileNotFoundError:
+            issues.append(f"Artifact is missing at verification time: {name}.")
             continue
         except SizeLimitError:
             checked += 1

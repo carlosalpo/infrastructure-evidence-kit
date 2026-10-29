@@ -59,6 +59,21 @@ def test_detect_missing_artifact(bundle, filename):
     assert not verify(bundle)["valid"]
 
 
+def test_file_disappearing_after_inventory_cannot_pass(bundle, monkeypatch):
+    from evidencekit.files import read_beneath
+
+    def disappears(root, name, maximum=1_000_000):
+        if name == "evidence/route-export.txt":
+            raise FileNotFoundError("simulated concurrent deletion after inventory")
+        return read_beneath(root, name, maximum)
+
+    monkeypatch.setattr("evidencekit.verify.read_beneath", disappears)
+    result = verify(bundle)
+    assert not result["valid"]
+    assert result["checked_files"] == 7
+    assert "missing at verification time" in result["issues"][0]
+
+
 def test_extra_file_fails_verification(bundle):
     (bundle / "unexpected.txt").write_text("extra")
     assert not verify(bundle)["valid"]
