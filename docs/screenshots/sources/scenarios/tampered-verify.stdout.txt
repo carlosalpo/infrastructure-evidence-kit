@@ -1,0 +1,8 @@
+{
+  "checked_files": 8,
+  "issues": [
+    "Artifact bytes or hash mismatch: evidence/route-export.txt."
+  ],
+  "scope": "file-integrity-only",
+  "valid": false
+}

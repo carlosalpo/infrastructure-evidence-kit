@@ -115,6 +115,12 @@ Tests cover the input contract, freshness boundaries, latest-attempt precedence,
 
 See [input specification](docs/input-spec.md), [design decisions](docs/design.md), [validation record](docs/validation.md) and [security notes](SECURITY.md).
 
+## Test captures
+
+![Executed gap assessment showing missing, stale and failed evidence](docs/screenshots/images/01-gaps.jpg)
+
+[Five documented captures](docs/screenshots/README.md) show collection coverage, a linked finding, detection of modified evidence, 133 passing tests and the historical-lab integration. Original outputs and provenance accompany the images.
+
 ## En español
 
 Una herramienta para organizar evidencias de infraestructura, detectar vacíos de recolección y entregar hallazgos con respaldo trazable. Genera un paquete reproducible y permite comprobar si sus archivos cambiaron. No confunde disponibilidad de evidencias con salud de los equipos ni valida automáticamente las conclusiones del autor.

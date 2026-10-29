@@ -1,0 +1,50 @@
+[
+  {
+    "case": "complete",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "verified": true
+  },
+  {
+    "case": "gaps",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "verified": true
+  },
+  {
+    "case": "latest-failed",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "verified": true
+  },
+  {
+    "case": "missing-file",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "verified": true
+  },
+  {
+    "case": "empty-file",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "verified": true
+  },
+  {
+    "case": "invalid-path",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "verified": true
+  },
+  {
+    "case": "tampered",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "verified": true
+  },
+  {
+    "case": "historical-lab",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "verified": true
+  }
+]

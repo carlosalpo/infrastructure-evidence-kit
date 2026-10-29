@@ -1,0 +1,108 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assessment_id": "archived-lab-handoff",
+  "coverage": [
+    {
+      "age_seconds": 1225,
+      "asset_id": "dual-wan-lab",
+      "asset_label": "Published synthetic dual-WAN laboratory",
+      "evidence_id": "baseline-record",
+      "max_age_hours": 168,
+      "requirement_id": "baseline",
+      "requirement_title": "Baseline test report",
+      "status": "collected"
+    },
+    {
+      "age_seconds": 1167,
+      "asset_id": "dual-wan-lab",
+      "asset_label": "Published synthetic dual-WAN laboratory",
+      "evidence_id": "fault-record",
+      "max_age_hours": 168,
+      "requirement_id": "fault",
+      "requirement_title": "Fault test report",
+      "status": "collected"
+    },
+    {
+      "age_seconds": 1113,
+      "asset_id": "dual-wan-lab",
+      "asset_label": "Published synthetic dual-WAN laboratory",
+      "evidence_id": "recovery-record",
+      "max_age_hours": 168,
+      "requirement_id": "recovery",
+      "requirement_title": "Recovery test report",
+      "status": "collected"
+    }
+  ],
+  "evidence": [
+    {
+      "age_seconds": 1225,
+      "asset_id": "dual-wan-lab",
+      "bundle_path": "evidence/baseline-record.txt",
+      "bytes": 2376,
+      "collected_at": "2026-10-29T17:39:35Z",
+      "exit_code": 0,
+      "id": "baseline-record",
+      "path": "baseline.json",
+      "requirement_id": "baseline",
+      "sha256": "8f28bd149eb3764fce1ec21bfcc1bb6a964aa92244f9515403a635f36c6254d2",
+      "status": "collected"
+    },
+    {
+      "age_seconds": 1167,
+      "asset_id": "dual-wan-lab",
+      "bundle_path": "evidence/fault-record.txt",
+      "bytes": 2376,
+      "collected_at": "2026-10-29T17:40:33Z",
+      "exit_code": 0,
+      "id": "fault-record",
+      "path": "fault.json",
+      "requirement_id": "fault",
+      "sha256": "d69fe202345038e255cf1e8e3354ed253d777f18506ea70f2c7ac6ccdfad3ae0",
+      "status": "collected"
+    },
+    {
+      "age_seconds": 1113,
+      "asset_id": "dual-wan-lab",
+      "bundle_path": "evidence/recovery-record.txt",
+      "bytes": 2376,
+      "collected_at": "2026-10-29T17:41:27Z",
+      "exit_code": 0,
+      "id": "recovery-record",
+      "path": "recovery.json",
+      "requirement_id": "recovery",
+      "sha256": "d550b766417d31007e6de13925735a6fe2ffad57b97891db82bcf38ab533e1ec",
+      "status": "collected"
+    }
+  ],
+  "findings": [
+    {
+      "asset_id": "dual-wan-lab",
+      "evidence_ids": [
+        "fault-record",
+        "recovery-record"
+      ],
+      "evidence_statuses": {
+        "fault-record": "collected",
+        "recovery-record": "collected"
+      },
+      "id": "controlled-fault",
+      "observation": "The archived fault report records two lost adjacencies while twelve loopback probes pass. This is a cited historical lab observation, not a new measurement.",
+      "recommendation": "Use the source project validation record for test scope. Do not infer convergence time or production availability from this package.",
+      "severity": "info",
+      "support": "attached",
+      "title": "Recorded behavior during a controlled fault"
+    }
+  ],
+  "result": "evidence-complete",
+  "schema_version": 1,
+  "scope": "collection-coverage-only",
+  "summary": {
+    "assets": 1,
+    "checks": 3,
+    "collected": 3,
+    "manual_findings": 1,
+    "statuses": {
+      "collected": 3
+    }
+  }
+}

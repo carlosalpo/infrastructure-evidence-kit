@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "archived-lab-handoff",
+  "title": "Archived Network Lab Factory evidence handoff",
+  "as_of": "2026-10-29T18:00:00Z",
+  "assets": [
+    {
+      "id": "dual-wan-lab",
+      "label": "Published synthetic dual-WAN laboratory",
+      "kind": "network"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "baseline",
+      "title": "Baseline test report",
+      "asset_kind": "network",
+      "max_age_hours": 168
+    },
+    {
+      "id": "fault",
+      "title": "Fault test report",
+      "asset_kind": "network",
+      "max_age_hours": 168
+    },
+    {
+      "id": "recovery",
+      "title": "Recovery test report",
+      "asset_kind": "network",
+      "max_age_hours": 168
+    }
+  ],
+  "evidence": [
+    {
+      "id": "baseline-record",
+      "asset_id": "dual-wan-lab",
+      "requirement_id": "baseline",
+      "path": "baseline.json",
+      "collected_at": "2026-10-29T17:39:35Z",
+      "exit_code": 0
+    },
+    {
+      "id": "fault-record",
+      "asset_id": "dual-wan-lab",
+      "requirement_id": "fault",
+      "path": "fault.json",
+      "collected_at": "2026-10-29T17:40:33Z",
+      "exit_code": 0
+    },
+    {
+      "id": "recovery-record",
+      "asset_id": "dual-wan-lab",
+      "requirement_id": "recovery",
+      "path": "recovery.json",
+      "collected_at": "2026-10-29T17:41:27Z",
+      "exit_code": 0
+    }
+  ],
+  "findings": [
+    {
+      "id": "controlled-fault",
+      "asset_id": "dual-wan-lab",
+      "severity": "info",
+      "title": "Recorded behavior during a controlled fault",
+      "observation": "The archived fault report records two lost adjacencies while twelve loopback probes pass. This is a cited historical lab observation, not a new measurement.",
+      "recommendation": "Use the source project validation record for test scope. Do not infer convergence time or production availability from this package.",
+      "evidence_ids": [
+        "fault-record",
+        "recovery-record"
+      ]
+    }
+  ]
+}

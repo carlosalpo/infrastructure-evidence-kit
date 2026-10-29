@@ -1,0 +1,49 @@
+{
+  "argv": [
+    ".venv/bin/python",
+    "-B",
+    "-c",
+    "import evidencekit, pathlib, hashlib, json; repo=pathlib.Path(\"src/evidencekit\"); installed=pathlib.Path(evidencekit.__file__).parent; rows=[{\"module\":p.name,\"repo_sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"installed_sha256\":hashlib.sha256((installed/p.name).read_bytes()).hexdigest(),\"matches\":p.read_bytes()==(installed/p.name).read_bytes()} for p in sorted(repo.glob(\"*.py\"))]; print(json.dumps(rows,indent=2)); assert all(r[\"matches\"] for r in rows)"
+  ],
+  "cwd": "${REPO}",
+  "exit_code": 0,
+  "checked_at": "2026-10-29T13:37:44.144974-06:00",
+  "modules": [
+    {
+      "module": "__init__.py",
+      "repo_sha256": "5f85b9e29763f752395e1f815becf6ab29142fd7064b1d5d85e4477ff7d2b2a2",
+      "installed_sha256": "5f85b9e29763f752395e1f815becf6ab29142fd7064b1d5d85e4477ff7d2b2a2",
+      "matches": true
+    },
+    {
+      "module": "bundle.py",
+      "repo_sha256": "ac6fee1dc6aeb1c339b77c2bec4ae653a7324bbd089385518ddb6c801307ab9f",
+      "installed_sha256": "ac6fee1dc6aeb1c339b77c2bec4ae653a7324bbd089385518ddb6c801307ab9f",
+      "matches": true
+    },
+    {
+      "module": "cli.py",
+      "repo_sha256": "b6b7ab9a0de118fe047a71d37104bc7192ae829ad8d10ca463812e3f2acf56b6",
+      "installed_sha256": "b6b7ab9a0de118fe047a71d37104bc7192ae829ad8d10ca463812e3f2acf56b6",
+      "matches": true
+    },
+    {
+      "module": "files.py",
+      "repo_sha256": "b1abc0f3ac65db8ba64ace88210befe4a952ac97a1b1afdc44d0d251a383dc27",
+      "installed_sha256": "b1abc0f3ac65db8ba64ace88210befe4a952ac97a1b1afdc44d0d251a383dc27",
+      "matches": true
+    },
+    {
+      "module": "model.py",
+      "repo_sha256": "e5a4034dead1496c0435517569071ff67aa998a50f34f72257f537eb83772b42",
+      "installed_sha256": "e5a4034dead1496c0435517569071ff67aa998a50f34f72257f537eb83772b42",
+      "matches": true
+    },
+    {
+      "module": "verify.py",
+      "repo_sha256": "54dccfabc5c85b7975df0f6f8d3027f2be0481e2198bfebb3cd6a5b0a4fc4bbf",
+      "installed_sha256": "54dccfabc5c85b7975df0f6f8d3027f2be0481e2198bfebb3cd6a5b0a4fc4bbf",
+      "matches": true
+    }
+  ]
+}

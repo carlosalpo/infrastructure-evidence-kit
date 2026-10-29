@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assets": [
+    {
+      "id": "dual-wan-lab",
+      "kind": "network",
+      "label": "Published synthetic dual-WAN laboratory"
+    }
+  ],
+  "evidence": [
+    {
+      "asset_id": "dual-wan-lab",
+      "collected_at": "2026-10-29T17:39:35Z",
+      "exit_code": 0,
+      "id": "baseline-record",
+      "path": "baseline.json",
+      "requirement_id": "baseline"
+    },
+    {
+      "asset_id": "dual-wan-lab",
+      "collected_at": "2026-10-29T17:40:33Z",
+      "exit_code": 0,
+      "id": "fault-record",
+      "path": "fault.json",
+      "requirement_id": "fault"
+    },
+    {
+      "asset_id": "dual-wan-lab",
+      "collected_at": "2026-10-29T17:41:27Z",
+      "exit_code": 0,
+      "id": "recovery-record",
+      "path": "recovery.json",
+      "requirement_id": "recovery"
+    }
+  ],
+  "findings": [
+    {
+      "asset_id": "dual-wan-lab",
+      "evidence_ids": [
+        "fault-record",
+        "recovery-record"
+      ],
+      "id": "controlled-fault",
+      "observation": "The archived fault report records two lost adjacencies while twelve loopback probes pass. This is a cited historical lab observation, not a new measurement.",
+      "recommendation": "Use the source project validation record for test scope. Do not infer convergence time or production availability from this package.",
+      "severity": "info",
+      "title": "Recorded behavior during a controlled fault"
+    }
+  ],
+  "id": "archived-lab-handoff",
+  "requirements": [
+    {
+      "asset_kind": "network",
+      "id": "baseline",
+      "max_age_hours": 168,
+      "title": "Baseline test report"
+    },
+    {
+      "asset_kind": "network",
+      "id": "fault",
+      "max_age_hours": 168,
+      "title": "Fault test report"
+    },
+    {
+      "asset_kind": "network",
+      "id": "recovery",
+      "max_age_hours": 168,
+      "title": "Recovery test report"
+    }
+  ],
+  "schema_version": 1,
+  "title": "Archived Network Lab Factory evidence handoff"
+}

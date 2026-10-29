@@ -1,0 +1,5 @@
+asset_id,asset_label,requirement_id,requirement_title,status,evidence_id,age_seconds,max_age_hours
+compute-a,Demo compute node,capacity,Capacity export,collected,capacity-export,3600,24
+router-edge,Demo edge router,backup,Backup job record,collected,backup-export,7200,168
+router-edge,Demo edge router,routing,Routing observation,empty,route-export,3600,24
+storage-a,Demo storage pool,replication,Replication job record,collected,replication-export,3600,24

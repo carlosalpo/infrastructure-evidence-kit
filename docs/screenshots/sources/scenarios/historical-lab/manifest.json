@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assessment_id": "archived-lab-handoff",
+  "canonical_sha256": "04cff33aabf1aeb6e4d6bb80bf662edaa1a96dd6fec55d9efb3e25969696cb2f",
+  "files": {
+    "assessment.json": {
+      "bytes": 1971,
+      "sha256": "04cff33aabf1aeb6e4d6bb80bf662edaa1a96dd6fec55d9efb3e25969696cb2f"
+    },
+    "coverage.csv": {
+      "bytes": 444,
+      "sha256": "edc23539fa82b9724294b7adce392a21a16dd28e0a5e144fa42be10435325020"
+    },
+    "evidence/baseline-record.txt": {
+      "bytes": 2376,
+      "sha256": "8f28bd149eb3764fce1ec21bfcc1bb6a964aa92244f9515403a635f36c6254d2"
+    },
+    "evidence/fault-record.txt": {
+      "bytes": 2376,
+      "sha256": "d69fe202345038e255cf1e8e3354ed253d777f18506ea70f2c7ac6ccdfad3ae0"
+    },
+    "evidence/recovery-record.txt": {
+      "bytes": 2376,
+      "sha256": "d550b766417d31007e6de13925735a6fe2ffad57b97891db82bcf38ab533e1ec"
+    },
+    "index.json": {
+      "bytes": 3334,
+      "sha256": "aba4b9df467a0922a1c40a574ea0e3b332db55624b726da61ed24e3baed1dc0d"
+    },
+    "report.md": {
+      "bytes": 3051,
+      "sha256": "76960d36c354599dc751aa94c4dd124d3a92f3f0460d1e228d99b540e68c55a8"
+    }
+  },
+  "input_sha256": "08ad61d023c5ea3bff445e98ba6b41bc18581bcfbe9a69af4cb19ffc54880074",
+  "result": "evidence-complete",
+  "schema_version": 1,
+  "tool": "infrastructure-evidence-kit",
+  "version": "0.1.0"
+}

@@ -1,0 +1,8 @@
+PASS complete: build exit 0; expected coverage verified
+PASS gaps: build exit 1; expected coverage verified
+PASS latest-failed: build exit 1; expected coverage verified
+PASS missing-file: build exit 1; expected coverage verified
+PASS empty-file: build exit 1; expected coverage verified
+PASS invalid-path: build exit 2; expected coverage verified
+PASS tampered: verify exit 1; changed evidence detected
+PASS historical-lab: build and verify exit 0; archived public records bundled

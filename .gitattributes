@@ -1,0 +1,2 @@
+# Preserve original capture and command-output bytes.
+docs/screenshots/** -text -whitespace

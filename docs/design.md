@@ -24,6 +24,8 @@ Output is a fresh directory (0700) with files (0600) on supported POSIX systems.
 
 The manifest inventories every emitted artifact except itself. Verification checks the expected paths, sizes and SHA-256 bytes and rejects missing/extra artifacts. The manifest schema and path vocabulary are validated before reading its referenced files. Evidence subdirectories may not contain links or nested directories.
 
+The verifier bounds each read to the declared size plus one byte, so an oversized altered artifact is detected without reading it in full. Declared artifacts are limited to 8 MB each and 48 MB in total; these verification bounds cover generated metadata as well as evidence.
+
 The manifest is unsigned. A deliberately updated file and manifest can pass verification; a regression test demonstrates that boundary. It does not prove origin, collection timestamps, collector exit codes, device state or chain of custody. For authentic provenance, use an external signing and retention process appropriate to your organization; that process is outside v0.1.
 
 ## Scope tradeoffs

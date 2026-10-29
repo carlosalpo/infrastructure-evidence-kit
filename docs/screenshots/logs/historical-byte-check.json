@@ -1,0 +1,26 @@
+[
+  {
+    "record": "baseline",
+    "original": "sources/inputs/historical-lab/evidence/baseline.json",
+    "bundle": "sources/scenarios/historical-lab/evidence/baseline-record.txt",
+    "bytes": 2376,
+    "sha256": "8f28bd149eb3764fce1ec21bfcc1bb6a964aa92244f9515403a635f36c6254d2",
+    "identical_bytes": true
+  },
+  {
+    "record": "fault",
+    "original": "sources/inputs/historical-lab/evidence/fault.json",
+    "bundle": "sources/scenarios/historical-lab/evidence/fault-record.txt",
+    "bytes": 2376,
+    "sha256": "d69fe202345038e255cf1e8e3354ed253d777f18506ea70f2c7ac6ccdfad3ae0",
+    "identical_bytes": true
+  },
+  {
+    "record": "recovery",
+    "original": "sources/inputs/historical-lab/evidence/recovery.json",
+    "bundle": "sources/scenarios/historical-lab/evidence/recovery-record.txt",
+    "bytes": 2376,
+    "sha256": "d550b766417d31007e6de13925735a6fe2ffad57b97891db82bcf38ab533e1ec",
+    "identical_bytes": true
+  }
+]

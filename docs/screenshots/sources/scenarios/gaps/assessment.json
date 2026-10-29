@@ -1,0 +1,88 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assets": [
+    {
+      "id": "compute-a",
+      "kind": "compute",
+      "label": "Demo compute node"
+    },
+    {
+      "id": "router-edge",
+      "kind": "network",
+      "label": "Demo edge router"
+    },
+    {
+      "id": "storage-a",
+      "kind": "storage",
+      "label": "Demo storage pool"
+    }
+  ],
+  "evidence": [
+    {
+      "asset_id": "compute-a",
+      "collected_at": "2026-10-27T17:00:00Z",
+      "exit_code": 0,
+      "id": "capacity-export",
+      "path": "capacity.json",
+      "requirement_id": "capacity"
+    },
+    {
+      "asset_id": "storage-a",
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 1,
+      "id": "replication-export",
+      "path": "replication-failed.txt",
+      "requirement_id": "replication"
+    },
+    {
+      "asset_id": "router-edge",
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 0,
+      "id": "route-export",
+      "path": "routing.txt",
+      "requirement_id": "routing"
+    }
+  ],
+  "findings": [
+    {
+      "asset_id": "compute-a",
+      "evidence_ids": [
+        "capacity-export"
+      ],
+      "id": "capacity-review",
+      "observation": "The synthetic export reports 82 percent utilization. A single sample does not establish a trend.",
+      "recommendation": "Review growth history and planned workloads before deciding on expansion.",
+      "severity": "medium",
+      "title": "Review projected capacity"
+    }
+  ],
+  "id": "demo-handoff",
+  "requirements": [
+    {
+      "asset_kind": "network",
+      "id": "backup",
+      "max_age_hours": 168,
+      "title": "Backup job record"
+    },
+    {
+      "asset_kind": "compute",
+      "id": "capacity",
+      "max_age_hours": 24,
+      "title": "Capacity export"
+    },
+    {
+      "asset_kind": "storage",
+      "id": "replication",
+      "max_age_hours": 24,
+      "title": "Replication job record"
+    },
+    {
+      "asset_kind": "network",
+      "id": "routing",
+      "max_age_hours": 24,
+      "title": "Routing observation"
+    }
+  ],
+  "schema_version": 1,
+  "title": "Synthetic infrastructure handoff"
+}

@@ -1,0 +1,119 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assessment_id": "demo-handoff",
+  "coverage": [
+    {
+      "age_seconds": 176400,
+      "asset_id": "compute-a",
+      "asset_label": "Demo compute node",
+      "evidence_id": "capacity-export",
+      "max_age_hours": 24,
+      "requirement_id": "capacity",
+      "requirement_title": "Capacity export",
+      "status": "stale"
+    },
+    {
+      "age_seconds": null,
+      "asset_id": "router-edge",
+      "asset_label": "Demo edge router",
+      "evidence_id": null,
+      "max_age_hours": 168,
+      "requirement_id": "backup",
+      "requirement_title": "Backup job record",
+      "status": "missing"
+    },
+    {
+      "age_seconds": 3600,
+      "asset_id": "router-edge",
+      "asset_label": "Demo edge router",
+      "evidence_id": "route-export",
+      "max_age_hours": 24,
+      "requirement_id": "routing",
+      "requirement_title": "Routing observation",
+      "status": "collected"
+    },
+    {
+      "age_seconds": 3600,
+      "asset_id": "storage-a",
+      "asset_label": "Demo storage pool",
+      "evidence_id": "replication-export",
+      "max_age_hours": 24,
+      "requirement_id": "replication",
+      "requirement_title": "Replication job record",
+      "status": "failed"
+    }
+  ],
+  "evidence": [
+    {
+      "age_seconds": 176400,
+      "asset_id": "compute-a",
+      "bundle_path": "evidence/capacity-export.txt",
+      "bytes": 74,
+      "collected_at": "2026-10-27T17:00:00Z",
+      "exit_code": 0,
+      "id": "capacity-export",
+      "path": "capacity.json",
+      "requirement_id": "capacity",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "status": "stale"
+    },
+    {
+      "age_seconds": 3600,
+      "asset_id": "storage-a",
+      "bundle_path": "evidence/replication-export.txt",
+      "bytes": 63,
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 1,
+      "id": "replication-export",
+      "path": "replication-failed.txt",
+      "requirement_id": "replication",
+      "sha256": "ec7b82025b9bbd1a5802b3518e5b37db22babac9ebf34acc311865a29e1074bf",
+      "status": "failed"
+    },
+    {
+      "age_seconds": 3600,
+      "asset_id": "router-edge",
+      "bundle_path": "evidence/route-export.txt",
+      "bytes": 63,
+      "collected_at": "2026-10-29T17:00:00Z",
+      "exit_code": 0,
+      "id": "route-export",
+      "path": "routing.txt",
+      "requirement_id": "routing",
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19",
+      "status": "collected"
+    }
+  ],
+  "findings": [
+    {
+      "asset_id": "compute-a",
+      "evidence_ids": [
+        "capacity-export"
+      ],
+      "evidence_statuses": {
+        "capacity-export": "stale"
+      },
+      "id": "capacity-review",
+      "observation": "The synthetic export reports 82 percent utilization. A single sample does not establish a trend.",
+      "recommendation": "Review growth history and planned workloads before deciding on expansion.",
+      "severity": "medium",
+      "support": "attached",
+      "title": "Review projected capacity"
+    }
+  ],
+  "result": "evidence-gaps",
+  "schema_version": 1,
+  "scope": "collection-coverage-only",
+  "summary": {
+    "assets": 3,
+    "checks": 4,
+    "collected": 1,
+    "manual_findings": 1,
+    "statuses": {
+      "collected": 1,
+      "failed": 1,
+      "missing": 1,
+      "stale": 1
+    }
+  }
+}

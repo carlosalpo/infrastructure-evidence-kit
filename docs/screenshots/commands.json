@@ -1,0 +1,78 @@
+{
+  "path_notation": "REPO and CAPTURE_ROOT replace only local absolute paths; stdout/stderr are unchanged.",
+  "environment": {
+    "PATH": "${REPO}/.venv/bin:$PATH",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TMPDIR": "${CAPTURE_ROOT}/run-bf228775/tmp",
+    "XDG_CACHE_HOME": "${CAPTURE_ROOT}/run-bf228775/cache",
+    "RUFF_CACHE_DIR": "${CAPTURE_ROOT}/run-bf228775/cache/ruff",
+    "PYTEST_ADDOPTS": "-o cache_dir=\"${CAPTURE_ROOT}/run-bf228775/cache/pytest\" --basetemp=\"${CAPTURE_ROOT}/run-bf228775/tmp/pytest\""
+  },
+  "commands": [
+    {
+      "name": "pytest",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "${REPO}",
+      "started_at": "2026-10-29T13:36:55.934316-06:00",
+      "finished_at": "2026-10-29T13:36:57.515895-06:00",
+      "exit_code": 0,
+      "stdout": "logs/checks/pytest.stdout.txt",
+      "stderr": "logs/checks/pytest.stderr.txt"
+    },
+    {
+      "name": "ruff-check",
+      "argv": [
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "cwd": "${REPO}",
+      "started_at": "2026-10-29T13:36:57.515941-06:00",
+      "finished_at": "2026-10-29T13:36:57.599831-06:00",
+      "exit_code": 0,
+      "stdout": "logs/checks/ruff-check.stdout.txt",
+      "stderr": "logs/checks/ruff-check.stderr.txt"
+    },
+    {
+      "name": "ruff-format",
+      "argv": [
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "cwd": "${REPO}",
+      "started_at": "2026-10-29T13:36:57.599856-06:00",
+      "finished_at": "2026-10-29T13:36:57.644845-06:00",
+      "exit_code": 0,
+      "stdout": "logs/checks/ruff-format.stdout.txt",
+      "stderr": "logs/checks/ruff-format.stderr.txt"
+    },
+    {
+      "name": "examples",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/check_examples.py",
+        "--output",
+        "${CAPTURE_ROOT}/run-bf228775/examples"
+      ],
+      "cwd": "${REPO}",
+      "started_at": "2026-10-29T13:36:57.644868-06:00",
+      "finished_at": "2026-10-29T13:37:00.852047-06:00",
+      "exit_code": 0,
+      "stdout": "logs/checks/examples.stdout.txt",
+      "stderr": "logs/checks/examples.stderr.txt"
+    }
+  ],
+  "scenario_commands_source": "sources/check_examples.py",
+  "scenario_results": "sources/scenarios/summary.json"
+}

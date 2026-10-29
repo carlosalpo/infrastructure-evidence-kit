@@ -1,0 +1,2 @@
+SYNTHETIC EXAMPLE
+job=demo-backup status=completed restore_test=not_performed

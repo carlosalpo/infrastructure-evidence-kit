@@ -1,0 +1,24 @@
+images/01-gaps.jpg
+Vacíos de evidencia
+Escenario sintético: 1/4 collected; estados missing, stale y failed. Build exit 1 y verify exit 0. La cobertura de evidencias no mide salud de infraestructura.
+Selección para portafolio: sí
+
+images/02-findings.jpg
+Hallazgo con respaldo
+Caso completo: 4/4 collected, con un hallazgo manual enlazado a capacity-export. El kit conserva el respaldo; no valida la conclusión del autor.
+Selección para portafolio: no
+
+images/03-tampered.jpg
+Integridad ante alteraciones
+La verificación detecta una modificación deliberada de route-export.txt: valid false y exit 1. El manifiesto no está firmado y no autentica el origen.
+Selección para portafolio: sí
+
+images/04-validation.jpg
+Validación del código
+133 tests aprobados, lint y formato correctos, y ocho escenarios CLI aprobados sobre el commit final bf2287757bd86cf590c89d91f39a5b52abcded43.
+Selección para portafolio: no
+
+images/05-historical.jpg
+Integración histórica
+Tres reportes públicos de Network Lab Factory v0.1.1, importados byte por byte: 3/3 collected. Los resultados 20/20, 18/20 y 20/20 son históricos; no hubo nueva prueba de red.
+Selección para portafolio: no

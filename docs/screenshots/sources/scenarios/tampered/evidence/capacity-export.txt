@@ -1,0 +1,5 @@
+{
+  "synthetic": true,
+  "utilization_percent": 82,
+  "sample_count": 1
+}

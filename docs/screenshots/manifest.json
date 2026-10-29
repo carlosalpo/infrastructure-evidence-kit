@@ -1,0 +1,859 @@
+{
+  "schema_version": 1,
+  "project": "Infrastructure Evidence Kit",
+  "version": "0.1.0",
+  "commit": "bf2287757bd86cf590c89d91f39a5b52abcded43",
+  "repository": "https://github.com/carlosalpo/infrastructure-evidence-kit",
+  "date": "2026-10-29",
+  "timezone": "America/Tegucigalpa",
+  "created_at": "2026-10-29T13:37:44.260168-06:00",
+  "validation_run": {
+    "commit": "bf2287757bd86cf590c89d91f39a5b52abcded43",
+    "version": "0.1.0",
+    "timezone": "America/Tegucigalpa",
+    "started_at": "2026-10-29T13:36:55.934316-06:00",
+    "finished_at": "2026-10-29T13:37:00.852047-06:00",
+    "code_clean_before": true,
+    "code_clean_after": true,
+    "documentation_changes_before": [
+      " M docs/design.md",
+      " M docs/validation.md"
+    ],
+    "documentation_changes_after": [
+      " M docs/design.md",
+      " M docs/validation.md"
+    ],
+    "tests_passed": 133
+  },
+  "validation": {
+    "tests_passed": 133,
+    "cli_scenarios_passed": 8,
+    "lint_exit_code": 0,
+    "format_exit_code": 0
+  },
+  "images": [
+    {
+      "path": "images/01-gaps.jpg",
+      "title": "Vacíos de evidencia",
+      "caption": "Escenario sintético: 1/4 collected; estados missing, stale y failed. Build exit 1 y verify exit 0. La cobertura de evidencias no mide salud de infraestructura.",
+      "selected_for_portfolio": true,
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "sha256": "93fa7f33303950b8547e6ab37844d40a6ea59ac5bf5e956b56183dd3600f7f2a",
+      "bytes": 79518,
+      "captured_at": "2026-10-29T13:37:15.713096-06:00",
+      "method": "Actual in-app browser full-page screenshot; no pixel editing",
+      "render_source": "reports/01-gaps.html",
+      "evidence_sources": [
+        "sources/scenarios/gaps/index.json",
+        "sources/scenarios/gaps/coverage.csv",
+        "sources/scenarios/gaps-build.stdout.txt",
+        "sources/scenarios/gaps-verify.stdout.txt"
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "images/02-findings.jpg",
+      "title": "Hallazgo con respaldo",
+      "caption": "Caso completo: 4/4 collected, con un hallazgo manual enlazado a capacity-export. El kit conserva el respaldo; no valida la conclusión del autor.",
+      "selected_for_portfolio": false,
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 858,
+      "sha256": "847ee1a9b5598fe9f39264592cfe9d4465a37f21ce0e5f91b8697e7af4834886",
+      "bytes": 95688,
+      "captured_at": "2026-10-29T13:37:20.377673-06:00",
+      "method": "Actual in-app browser full-page screenshot; no pixel editing",
+      "render_source": "reports/02-findings.html",
+      "evidence_sources": [
+        "sources/scenarios/complete/index.json",
+        "sources/scenarios/complete/evidence/capacity-export.txt",
+        "sources/scenarios/complete-verify.stdout.txt"
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "images/03-tampered.jpg",
+      "title": "Integridad ante alteraciones",
+      "caption": "La verificación detecta una modificación deliberada de route-export.txt: valid false y exit 1. El manifiesto no está firmado y no autentica el origen.",
+      "selected_for_portfolio": true,
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "sha256": "746364bf3939ffaf02431a433195f61da4ec9f09bbe760479cbb2e1f949eb93a",
+      "bytes": 84501,
+      "captured_at": "2026-10-29T13:37:26.483244-06:00",
+      "method": "Actual in-app browser full-page screenshot; no pixel editing",
+      "render_source": "reports/03-tampered.html",
+      "evidence_sources": [
+        "sources/scenarios/tampered-verify.stdout.txt",
+        "sources/scenarios/summary.json",
+        "sources/scenarios/complete/evidence/route-export.txt",
+        "sources/scenarios/tampered/evidence/route-export.txt"
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "images/04-validation.jpg",
+      "title": "Validación del código",
+      "caption": "133 tests aprobados, lint y formato correctos, y ocho escenarios CLI aprobados sobre el commit final bf2287757bd86cf590c89d91f39a5b52abcded43.",
+      "selected_for_portfolio": false,
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 744,
+      "sha256": "4681cf0b276d442ce32010814c2298decbbdb23b5de6ddc2b99a7cda5deb24bf",
+      "bytes": 111608,
+      "captured_at": "2026-10-29T13:37:30.687492-06:00",
+      "method": "Actual in-app browser full-page screenshot; no pixel editing",
+      "render_source": "reports/04-validation.html",
+      "evidence_sources": [
+        "logs/checks/pytest.stdout.txt",
+        "logs/checks/ruff-check.stdout.txt",
+        "logs/checks/ruff-format.stdout.txt",
+        "logs/checks/examples.stdout.txt",
+        "commands.json"
+      ],
+      "visually_reviewed": true
+    },
+    {
+      "path": "images/05-historical.jpg",
+      "title": "Integración histórica",
+      "caption": "Tres reportes públicos de Network Lab Factory v0.1.1, importados byte por byte: 3/3 collected. Los resultados 20/20, 18/20 y 20/20 son históricos; no hubo nueva prueba de red.",
+      "selected_for_portfolio": false,
+      "mime_type": "image/jpeg",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6a92b746c2bbe68e824050af6536655f127cda21c85c1ada1dd6e1ceabaef844",
+      "bytes": 93099,
+      "captured_at": "2026-10-29T13:37:36.505811-06:00",
+      "method": "Actual in-app browser full-page screenshot; no pixel editing",
+      "render_source": "reports/05-historical.html",
+      "evidence_sources": [
+        "sources/scenarios/historical-lab/index.json",
+        "sources/inputs/historical-lab/provenance.json",
+        "logs/historical-byte-check.json"
+      ],
+      "visually_reviewed": true
+    }
+  ],
+  "selected_images": [
+    "images/01-gaps.jpg",
+    "images/03-tampered.jpg"
+  ],
+  "limitations": [
+    "collection-coverage-only",
+    "file-integrity-only",
+    "unsigned manifest; no authentication",
+    "no collection execution",
+    "no health or compliance assessment",
+    "no secret redaction",
+    "historical reports; no new network tests"
+  ],
+  "file_inventory_excludes": [
+    "manifest.json",
+    "SHA256SUMS"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "cb1812896f6ed220419c2ca6fa664ad3b81606cfad8b8a63c70875efa139cf09",
+      "bytes": 3608
+    },
+    {
+      "path": "README.txt",
+      "sha256": "b8b26e03a95bd6a57cfcc8c2e5b492f884da3084b67d33e725a847d57fe36af8",
+      "bytes": 3139
+    },
+    {
+      "path": "captions.txt",
+      "sha256": "099a5309159e1c3ab753fffb4b251ea6ff6f4c48f40638e485e48ae2101feb78",
+      "bytes": 1178
+    },
+    {
+      "path": "commands.json",
+      "sha256": "37af2e40cc04256c5ebfca9cff396fd6bd413991d09586c8918fe4d36a65d0fe",
+      "bytes": 2355
+    },
+    {
+      "path": "images/01-gaps.jpg",
+      "sha256": "93fa7f33303950b8547e6ab37844d40a6ea59ac5bf5e956b56183dd3600f7f2a",
+      "bytes": 79518
+    },
+    {
+      "path": "images/02-findings.jpg",
+      "sha256": "847ee1a9b5598fe9f39264592cfe9d4465a37f21ce0e5f91b8697e7af4834886",
+      "bytes": 95688
+    },
+    {
+      "path": "images/03-tampered.jpg",
+      "sha256": "746364bf3939ffaf02431a433195f61da4ec9f09bbe760479cbb2e1f949eb93a",
+      "bytes": 84501
+    },
+    {
+      "path": "images/04-validation.jpg",
+      "sha256": "4681cf0b276d442ce32010814c2298decbbdb23b5de6ddc2b99a7cda5deb24bf",
+      "bytes": 111608
+    },
+    {
+      "path": "images/05-historical.jpg",
+      "sha256": "6a92b746c2bbe68e824050af6536655f127cda21c85c1ada1dd6e1ceabaef844",
+      "bytes": 93099
+    },
+    {
+      "path": "logs/checks/examples.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "logs/checks/examples.stdout.txt",
+      "sha256": "b1ff95525a2e4e25cec9fbe3b0c852ceaf690dabdd30a3863e010395276f32a9",
+      "bytes": 481
+    },
+    {
+      "path": "logs/checks/pytest.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "logs/checks/pytest.stdout.txt",
+      "sha256": "ba9d39f4ab8c991e70c6c5fb00c7c42691cdfa8bad0db1d3922e523f8b05e0e9",
+      "bytes": 180
+    },
+    {
+      "path": "logs/checks/ruff-check.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "logs/checks/ruff-check.stdout.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "logs/checks/ruff-format.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "logs/checks/ruff-format.stdout.txt",
+      "sha256": "75b7030be9d7de96bf4e76e79b1f03f14af8899d169fd8d79564d59167d1ab80",
+      "bytes": 27
+    },
+    {
+      "path": "logs/code-origin-check.json",
+      "sha256": "80ebf270f7f9f7bc5bba1f19a8ce332b379c3ced979164a4b873974c464ab64b",
+      "bytes": 422
+    },
+    {
+      "path": "logs/historical-byte-check.json",
+      "sha256": "bf8eff470fb7e50009588de2597e119536a2e94fffbd8c46b27904705270402b",
+      "bytes": 939
+    },
+    {
+      "path": "logs/installed-code-check.json",
+      "sha256": "7bf527e12e98ec65d39498753cd52f1e3ae8fb334d7fd1cbe08484a32224a812",
+      "bytes": 2135
+    },
+    {
+      "path": "logs/privacy-review.json",
+      "sha256": "34092339c63dfe8b419c0dbd3e94a37c716297541b4cdec388b3ba50c6c08c0e",
+      "bytes": 495
+    },
+    {
+      "path": "logs/run-metadata.json",
+      "sha256": "ff9227cd6745f5df27ad1759aac910f46ccf6e2e4e8f559f973016ee251af62d",
+      "bytes": 490
+    },
+    {
+      "path": "reports/01-gaps.html",
+      "sha256": "dd0ad334cd7131588e57ba5eafe773b13e94b9db3859cf697f8269e2ee44327f",
+      "bytes": 1889
+    },
+    {
+      "path": "reports/02-findings.html",
+      "sha256": "0683db1a7bf166cb1b0ad36fc27d1c5d08d026fbeb80fd664d792246b550fe29",
+      "bytes": 1957
+    },
+    {
+      "path": "reports/03-tampered.html",
+      "sha256": "119dd40cb481986bd26129921f24bfea2f08c562566d54588c0289f1b46bfbbf",
+      "bytes": 1936
+    },
+    {
+      "path": "reports/04-validation.html",
+      "sha256": "17eb1bfe4aaf77d6ce66f2cf6c69eab440310fe54cf749fa41e07f77d69b9d73",
+      "bytes": 2112
+    },
+    {
+      "path": "reports/05-historical.html",
+      "sha256": "2d820d99f86c2c00f1070cc19fcedeb49102b3c0851b3d551a134ad3d8d077ce",
+      "bytes": 2084
+    },
+    {
+      "path": "reports/report.css",
+      "sha256": "3b375986dae985fb7af398b310dc19172df1e8f6dea351e9e38a11e7c9cc8cda",
+      "bytes": 2289
+    },
+    {
+      "path": "sources/LICENSE",
+      "sha256": "a305974127d07a1f9f85714281ba7ffaae5d0d5f207ea76ab6410dc47282392f",
+      "bytes": 1072
+    },
+    {
+      "path": "sources/check_examples.py",
+      "sha256": "dbcf60bb03f87cba1e4f5b374ad5d725e9242d8bd84c797b663ccd574f54cdfd",
+      "bytes": 3887
+    },
+    {
+      "path": "sources/inputs/complete.json",
+      "sha256": "2d496bd9d5ed9928c765e6a92a8985a058664379461f3976d7a8574fe3b11b70",
+      "bytes": 2297
+    },
+    {
+      "path": "sources/inputs/empty-file.json",
+      "sha256": "ce0210e84bedb6d714e9b64f9541629c8e4841f54550c1cfb96d898be305b775",
+      "bytes": 2295
+    },
+    {
+      "path": "sources/inputs/evidence/backup.txt",
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7",
+      "bytes": 78
+    },
+    {
+      "path": "sources/inputs/evidence/capacity.json",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "bytes": 74
+    },
+    {
+      "path": "sources/inputs/evidence/empty.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/inputs/evidence/replication-failed.txt",
+      "sha256": "ec7b82025b9bbd1a5802b3518e5b37db22babac9ebf34acc311865a29e1074bf",
+      "bytes": 63
+    },
+    {
+      "path": "sources/inputs/evidence/replication.txt",
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6",
+      "bytes": 87
+    },
+    {
+      "path": "sources/inputs/evidence/routing-failed.txt",
+      "sha256": "8fce6f90df47a26a6f7d1bd9d653c9a60e4781fecc2321107861f998acc43687",
+      "bytes": 66
+    },
+    {
+      "path": "sources/inputs/evidence/routing.txt",
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19",
+      "bytes": 63
+    },
+    {
+      "path": "sources/inputs/gaps.json",
+      "sha256": "006ac5dcd80f7b7031901757b9a8e29f28340a78443dac28d03e31b0fa42c919",
+      "bytes": 2100
+    },
+    {
+      "path": "sources/inputs/historical-lab/README.md",
+      "sha256": "23fadacf6f54b47db9701011502fee93811c1c84e6769f951f5e296046818c38",
+      "bytes": 1723
+    },
+    {
+      "path": "sources/inputs/historical-lab/assessment.json",
+      "sha256": "08ad61d023c5ea3bff445e98ba6b41bc18581bcfbe9a69af4cb19ffc54880074",
+      "bytes": 1971
+    },
+    {
+      "path": "sources/inputs/historical-lab/evidence/baseline.json",
+      "sha256": "8f28bd149eb3764fce1ec21bfcc1bb6a964aa92244f9515403a635f36c6254d2",
+      "bytes": 2376
+    },
+    {
+      "path": "sources/inputs/historical-lab/evidence/fault.json",
+      "sha256": "d69fe202345038e255cf1e8e3354ed253d777f18506ea70f2c7ac6ccdfad3ae0",
+      "bytes": 2376
+    },
+    {
+      "path": "sources/inputs/historical-lab/evidence/recovery.json",
+      "sha256": "d550b766417d31007e6de13925735a6fe2ffad57b97891db82bcf38ab533e1ec",
+      "bytes": 2376
+    },
+    {
+      "path": "sources/inputs/historical-lab/provenance.json",
+      "sha256": "6484290f7353f100aa4f160cf8dcc2a1fbd106197e0246df5907c3c0586b3c6e",
+      "bytes": 1507
+    },
+    {
+      "path": "sources/inputs/invalid-path.json",
+      "sha256": "ee56bfd1a19983bc7c1bd8712dbd83c2bb513379bc64b93597a1ea36b05ace4d",
+      "bytes": 2300
+    },
+    {
+      "path": "sources/inputs/latest-failed.json",
+      "sha256": "df251a7aa3f2bd6f3a3b9ab48db7a18e4d2d8dd70d2be844487bd1f60fc3bd9e",
+      "bytes": 2516
+    },
+    {
+      "path": "sources/inputs/missing-file.json",
+      "sha256": "d68b4f369d8cc42fb51594983c02d520489cf7a59b1668f68f2f938ec24bc82b",
+      "bytes": 2295
+    },
+    {
+      "path": "sources/project-README.md",
+      "sha256": "714897d2d0f648bfd92242e7737a92cc6e3d712171e6fd746e3bc05693f49719",
+      "bytes": 8056
+    },
+    {
+      "path": "sources/scenarios/complete-build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/complete-build.stdout.txt",
+      "sha256": "b70479c5cf26d60f1cf3b15396a8177a5a030e0fdf4be7ac96b50be282becd7b",
+      "bytes": 80
+    },
+    {
+      "path": "sources/scenarios/complete-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/complete-verify.stdout.txt",
+      "sha256": "59b90e448423a39d9ca98c5bea81a8b56833dce9acb5f0003cbfe6ac9178134d",
+      "bytes": 92
+    },
+    {
+      "path": "sources/scenarios/complete/assessment.json",
+      "sha256": "0b098f40b4fb8e5eae76a1c7366a97c6b9c17372338f1dce31f308f159b507c3",
+      "bytes": 2297
+    },
+    {
+      "path": "sources/scenarios/complete/coverage.csv",
+      "sha256": "0c13afa39d5032176be0406c4326b2d3f5c0b86cc1cd4f6720d9603d2637c272",
+      "bytes": 461
+    },
+    {
+      "path": "sources/scenarios/complete/evidence/backup-export.txt",
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7",
+      "bytes": 78
+    },
+    {
+      "path": "sources/scenarios/complete/evidence/capacity-export.txt",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "bytes": 74
+    },
+    {
+      "path": "sources/scenarios/complete/evidence/replication-export.txt",
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6",
+      "bytes": 87
+    },
+    {
+      "path": "sources/scenarios/complete/evidence/route-export.txt",
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19",
+      "bytes": 63
+    },
+    {
+      "path": "sources/scenarios/complete/index.json",
+      "sha256": "fa08923fe9d6211d98083bd8906abe9430e733997c844c98c7eb92ad136cf88f",
+      "bytes": 3761
+    },
+    {
+      "path": "sources/scenarios/complete/manifest.json",
+      "sha256": "b66a88cf9341aa7660854e7e6c047efaf264903f7c766f50879f6df96318936a",
+      "bytes": 1500
+    },
+    {
+      "path": "sources/scenarios/complete/report.md",
+      "sha256": "db92a7ba7ebbceb1dbb45c20fc9c91cb51525cdbee986f6c798c1e3a561f9525",
+      "bytes": 2976
+    },
+    {
+      "path": "sources/scenarios/empty-file-build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/empty-file-build.stdout.txt",
+      "sha256": "251ccf6b1af590c0cc33d77ab3429efcd45ee0a7c9ec72d6b25310de33e7959f",
+      "bytes": 76
+    },
+    {
+      "path": "sources/scenarios/empty-file-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/empty-file-verify.stdout.txt",
+      "sha256": "59b90e448423a39d9ca98c5bea81a8b56833dce9acb5f0003cbfe6ac9178134d",
+      "bytes": 92
+    },
+    {
+      "path": "sources/scenarios/empty-file/assessment.json",
+      "sha256": "c41cd41c7630a0980aeb42af403e94a43ae75c0146906901776230f5c9ebcdc3",
+      "bytes": 2295
+    },
+    {
+      "path": "sources/scenarios/empty-file/coverage.csv",
+      "sha256": "d992e87f3621fe184004b8c85471393cb17077a435aa9591331363b4fd278ba1",
+      "bytes": 457
+    },
+    {
+      "path": "sources/scenarios/empty-file/evidence/backup-export.txt",
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7",
+      "bytes": 78
+    },
+    {
+      "path": "sources/scenarios/empty-file/evidence/capacity-export.txt",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "bytes": 74
+    },
+    {
+      "path": "sources/scenarios/empty-file/evidence/replication-export.txt",
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6",
+      "bytes": 87
+    },
+    {
+      "path": "sources/scenarios/empty-file/evidence/route-export.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/empty-file/index.json",
+      "sha256": "1c4b06515fdb8067341f3bc8e3ae92c24e36489608d411232bd7541ca09651e5",
+      "bytes": 3764
+    },
+    {
+      "path": "sources/scenarios/empty-file/manifest.json",
+      "sha256": "6c9c54387588221f80bb32516435ee7635c8b57c4adb5be0421834ee90fa128c",
+      "bytes": 1495
+    },
+    {
+      "path": "sources/scenarios/empty-file/report.md",
+      "sha256": "773fb69097861c036628ef2f98cd18c8a8ac8e727ef120645c4e34253bf17adf",
+      "bytes": 2963
+    },
+    {
+      "path": "sources/scenarios/gaps-build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/gaps-build.stdout.txt",
+      "sha256": "f0d71f22b9abc77db2b8dbb17b4e37292ce9f295bcd966c250a5079a252207cc",
+      "bytes": 76
+    },
+    {
+      "path": "sources/scenarios/gaps-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/gaps-verify.stdout.txt",
+      "sha256": "9e7e0a20ee6e9aaf268022c2bb9113804f336fa407f4336e6dc7ebf2d6327236",
+      "bytes": 92
+    },
+    {
+      "path": "sources/scenarios/gaps/assessment.json",
+      "sha256": "eb6f8032495b95b9dabc1136b0dc08c77f9a1b34b7e84e487267fd1bd06bb5a5",
+      "bytes": 2100
+    },
+    {
+      "path": "sources/scenarios/gaps/coverage.csv",
+      "sha256": "d0f23e797f311737f45538630780e5f08680150b4f45c11c545ea97b7e0c1177",
+      "bytes": 437
+    },
+    {
+      "path": "sources/scenarios/gaps/evidence/capacity-export.txt",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "bytes": 74
+    },
+    {
+      "path": "sources/scenarios/gaps/evidence/replication-export.txt",
+      "sha256": "ec7b82025b9bbd1a5802b3518e5b37db22babac9ebf34acc311865a29e1074bf",
+      "bytes": 63
+    },
+    {
+      "path": "sources/scenarios/gaps/evidence/route-export.txt",
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19",
+      "bytes": 63
+    },
+    {
+      "path": "sources/scenarios/gaps/index.json",
+      "sha256": "9309c36ec3c131efe312ddc7be8a2a090caf262d9b6add12c358c2eef9f4ba18",
+      "bytes": 3380
+    },
+    {
+      "path": "sources/scenarios/gaps/manifest.json",
+      "sha256": "d704e5f38838baef971688d091691e4471b36a66a71d1a1ab8a03667180b2fb5",
+      "bytes": 1351
+    },
+    {
+      "path": "sources/scenarios/gaps/report.md",
+      "sha256": "9c55e79b48b3e2b465c969f2b7dbbf4cfa113133d8624a3248580a1978e80bb7",
+      "bytes": 2783
+    },
+    {
+      "path": "sources/scenarios/historical-lab-build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/historical-lab-build.stdout.txt",
+      "sha256": "007653c12a9f88607e5dce68c6cce32879e3ba3bd8acc942da1cc90689b64dce",
+      "bytes": 80
+    },
+    {
+      "path": "sources/scenarios/historical-lab-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/historical-lab-verify.stdout.txt",
+      "sha256": "9e7e0a20ee6e9aaf268022c2bb9113804f336fa407f4336e6dc7ebf2d6327236",
+      "bytes": 92
+    },
+    {
+      "path": "sources/scenarios/historical-lab/assessment.json",
+      "sha256": "04cff33aabf1aeb6e4d6bb80bf662edaa1a96dd6fec55d9efb3e25969696cb2f",
+      "bytes": 1971
+    },
+    {
+      "path": "sources/scenarios/historical-lab/coverage.csv",
+      "sha256": "edc23539fa82b9724294b7adce392a21a16dd28e0a5e144fa42be10435325020",
+      "bytes": 444
+    },
+    {
+      "path": "sources/scenarios/historical-lab/evidence/baseline-record.txt",
+      "sha256": "8f28bd149eb3764fce1ec21bfcc1bb6a964aa92244f9515403a635f36c6254d2",
+      "bytes": 2376
+    },
+    {
+      "path": "sources/scenarios/historical-lab/evidence/fault-record.txt",
+      "sha256": "d69fe202345038e255cf1e8e3354ed253d777f18506ea70f2c7ac6ccdfad3ae0",
+      "bytes": 2376
+    },
+    {
+      "path": "sources/scenarios/historical-lab/evidence/recovery-record.txt",
+      "sha256": "d550b766417d31007e6de13925735a6fe2ffad57b97891db82bcf38ab533e1ec",
+      "bytes": 2376
+    },
+    {
+      "path": "sources/scenarios/historical-lab/index.json",
+      "sha256": "aba4b9df467a0922a1c40a574ea0e3b332db55624b726da61ed24e3baed1dc0d",
+      "bytes": 3334
+    },
+    {
+      "path": "sources/scenarios/historical-lab/manifest.json",
+      "sha256": "e12a5a01910ad85098e780cee9cb6eda7e45cd87c5eba75296e045a034f02047",
+      "bytes": 1366
+    },
+    {
+      "path": "sources/scenarios/historical-lab/report.md",
+      "sha256": "76960d36c354599dc751aa94c4dd124d3a92f3f0460d1e228d99b540e68c55a8",
+      "bytes": 3051
+    },
+    {
+      "path": "sources/scenarios/invalid-path-build.stderr.txt",
+      "sha256": "80dd40b4cea1329c905b3e298828a48a40a328c1f50decd775b3c724954e9cdd",
+      "bytes": 89
+    },
+    {
+      "path": "sources/scenarios/invalid-path-build.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/latest-failed-build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/latest-failed-build.stdout.txt",
+      "sha256": "251ccf6b1af590c0cc33d77ab3429efcd45ee0a7c9ec72d6b25310de33e7959f",
+      "bytes": 76
+    },
+    {
+      "path": "sources/scenarios/latest-failed-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/latest-failed-verify.stdout.txt",
+      "sha256": "6a33a0f8e0e8c4e2d169b147580198499d587289eb477c3469807eef8b33f920",
+      "bytes": 92
+    },
+    {
+      "path": "sources/scenarios/latest-failed/assessment.json",
+      "sha256": "0e96f5aef02c72b15f159b934bf319fc7b887d3fca2521337aa2d0951bcab0de",
+      "bytes": 2516
+    },
+    {
+      "path": "sources/scenarios/latest-failed/coverage.csv",
+      "sha256": "62ecfe7b37e18668a45de6fc4f35f4dd07949b34ab394ea7f13b92c574fcde8d",
+      "bytes": 465
+    },
+    {
+      "path": "sources/scenarios/latest-failed/evidence/backup-export.txt",
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7",
+      "bytes": 78
+    },
+    {
+      "path": "sources/scenarios/latest-failed/evidence/capacity-export.txt",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "bytes": 74
+    },
+    {
+      "path": "sources/scenarios/latest-failed/evidence/replication-export.txt",
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6",
+      "bytes": 87
+    },
+    {
+      "path": "sources/scenarios/latest-failed/evidence/route-export.txt",
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19",
+      "bytes": 63
+    },
+    {
+      "path": "sources/scenarios/latest-failed/evidence/route-latest-failed.txt",
+      "sha256": "8fce6f90df47a26a6f7d1bd9d653c9a60e4781fecc2321107861f998acc43687",
+      "bytes": 66
+    },
+    {
+      "path": "sources/scenarios/latest-failed/index.json",
+      "sha256": "a3bcda1a3d1952d4e3bd096a05f7f96829dd1d7a47d72c85314f0c59900071f0",
+      "bytes": 4212
+    },
+    {
+      "path": "sources/scenarios/latest-failed/manifest.json",
+      "sha256": "a90b6fbf978fb0cdab85ac72670a4a3112c90e082f78af723b2cc5f013e8b702",
+      "bytes": 1647
+    },
+    {
+      "path": "sources/scenarios/latest-failed/report.md",
+      "sha256": "244924c712419356c18021586d859b0947fbe029be353449003a6a4826d41893",
+      "bytes": 3118
+    },
+    {
+      "path": "sources/scenarios/missing-file-build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/missing-file-build.stdout.txt",
+      "sha256": "251ccf6b1af590c0cc33d77ab3429efcd45ee0a7c9ec72d6b25310de33e7959f",
+      "bytes": 76
+    },
+    {
+      "path": "sources/scenarios/missing-file-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/missing-file-verify.stdout.txt",
+      "sha256": "9e7e0a20ee6e9aaf268022c2bb9113804f336fa407f4336e6dc7ebf2d6327236",
+      "bytes": 92
+    },
+    {
+      "path": "sources/scenarios/missing-file/assessment.json",
+      "sha256": "cbc8579ad33a6fa25d18234103188949adb1934b6238460c14f14c10e2b36ed6",
+      "bytes": 2295
+    },
+    {
+      "path": "sources/scenarios/missing-file/coverage.csv",
+      "sha256": "0ac7433b73240d24273b98988e87e29a0751cd912a83be1ee8f3f91f01e01b6b",
+      "bytes": 459
+    },
+    {
+      "path": "sources/scenarios/missing-file/evidence/backup-export.txt",
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7",
+      "bytes": 78
+    },
+    {
+      "path": "sources/scenarios/missing-file/evidence/replication-export.txt",
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6",
+      "bytes": 87
+    },
+    {
+      "path": "sources/scenarios/missing-file/evidence/route-export.txt",
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19",
+      "bytes": 63
+    },
+    {
+      "path": "sources/scenarios/missing-file/index.json",
+      "sha256": "b7b47cf9a1fc87c21c01ce6297dd888634e24e8efcaba25a8b9ad29eae85c9cc",
+      "bytes": 3685
+    },
+    {
+      "path": "sources/scenarios/missing-file/manifest.json",
+      "sha256": "f770c2e27e2ea505ccbb9d5ebf0aea850789c33b7719db2b2be94eca507f4ba1",
+      "bytes": 1349
+    },
+    {
+      "path": "sources/scenarios/missing-file/report.md",
+      "sha256": "a32bcdc4497b3249b3552f4c2b81801ce15c8ffc40c5addd2e0c06f68fad6cea",
+      "bytes": 2873
+    },
+    {
+      "path": "sources/scenarios/summary.json",
+      "sha256": "992cff8e0646c1a2aa8225c84bca0b685fa02d37472c54331cdf79880bdc5be6",
+      "bytes": 820
+    },
+    {
+      "path": "sources/scenarios/tampered-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "sources/scenarios/tampered-verify.stdout.txt",
+      "sha256": "b2872d226ffec033a684a7b27b70b329b1990b70cbfea70c969d05c5bd83a96d",
+      "bytes": 162
+    },
+    {
+      "path": "sources/scenarios/tampered/assessment.json",
+      "sha256": "0b098f40b4fb8e5eae76a1c7366a97c6b9c17372338f1dce31f308f159b507c3",
+      "bytes": 2297
+    },
+    {
+      "path": "sources/scenarios/tampered/coverage.csv",
+      "sha256": "0c13afa39d5032176be0406c4326b2d3f5c0b86cc1cd4f6720d9603d2637c272",
+      "bytes": 461
+    },
+    {
+      "path": "sources/scenarios/tampered/evidence/backup-export.txt",
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7",
+      "bytes": 78
+    },
+    {
+      "path": "sources/scenarios/tampered/evidence/capacity-export.txt",
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20",
+      "bytes": 74
+    },
+    {
+      "path": "sources/scenarios/tampered/evidence/replication-export.txt",
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6",
+      "bytes": 87
+    },
+    {
+      "path": "sources/scenarios/tampered/evidence/route-export.txt",
+      "sha256": "2b39ed133b2e9fb15124cb0696edbd6039f2ef2294b62f1e3e83a58aeb810db6",
+      "bytes": 101
+    },
+    {
+      "path": "sources/scenarios/tampered/index.json",
+      "sha256": "fa08923fe9d6211d98083bd8906abe9430e733997c844c98c7eb92ad136cf88f",
+      "bytes": 3761
+    },
+    {
+      "path": "sources/scenarios/tampered/manifest.json",
+      "sha256": "b66a88cf9341aa7660854e7e6c047efaf264903f7c766f50879f6df96318936a",
+      "bytes": 1500
+    },
+    {
+      "path": "sources/scenarios/tampered/report.md",
+      "sha256": "db92a7ba7ebbceb1dbb45c20fc9c91cb51525cdbee986f6c798c1e3a561f9525",
+      "bytes": 2976
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assessment_id": "demo-handoff",
+  "canonical_sha256": "0e96f5aef02c72b15f159b934bf319fc7b887d3fca2521337aa2d0951bcab0de",
+  "files": {
+    "assessment.json": {
+      "bytes": 2516,
+      "sha256": "0e96f5aef02c72b15f159b934bf319fc7b887d3fca2521337aa2d0951bcab0de"
+    },
+    "coverage.csv": {
+      "bytes": 465,
+      "sha256": "62ecfe7b37e18668a45de6fc4f35f4dd07949b34ab394ea7f13b92c574fcde8d"
+    },
+    "evidence/backup-export.txt": {
+      "bytes": 78,
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7"
+    },
+    "evidence/capacity-export.txt": {
+      "bytes": 74,
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20"
+    },
+    "evidence/replication-export.txt": {
+      "bytes": 87,
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6"
+    },
+    "evidence/route-export.txt": {
+      "bytes": 63,
+      "sha256": "3835ecfe3c5429cdac5e888ca3fbb0f39db1a568f84dd43ce2b1373a9038ac19"
+    },
+    "evidence/route-latest-failed.txt": {
+      "bytes": 66,
+      "sha256": "8fce6f90df47a26a6f7d1bd9d653c9a60e4781fecc2321107861f998acc43687"
+    },
+    "index.json": {
+      "bytes": 4212,
+      "sha256": "a3bcda1a3d1952d4e3bd096a05f7f96829dd1d7a47d72c85314f0c59900071f0"
+    },
+    "report.md": {
+      "bytes": 3118,
+      "sha256": "244924c712419356c18021586d859b0947fbe029be353449003a6a4826d41893"
+    }
+  },
+  "input_sha256": "df251a7aa3f2bd6f3a3b9ab48db7a18e4d2d8dd70d2be844487bd1f60fc3bd9e",
+  "result": "evidence-gaps",
+  "schema_version": 1,
+  "tool": "infrastructure-evidence-kit",
+  "version": "0.1.0"
+}

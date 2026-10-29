@@ -1,0 +1,2 @@
+SYNTHETIC EXAMPLE
+job=demo-replication status=completed consistency_test=not_performed

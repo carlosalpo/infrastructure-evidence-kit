@@ -1,0 +1,17 @@
+{
+  "reviewed_at": "2026-10-29T13:37:44.237600-06:00",
+  "text_files_checked": 133,
+  "image_files_visually_reviewed": 5,
+  "detected_personal_paths": 0,
+  "detected_RFC1918_addresses": 0,
+  "detected_credentials": 0,
+  "address_literals": [
+    "192.0.2.2",
+    "198.19.0.1",
+    "198.19.0.2",
+    "198.19.0.3",
+    "198.19.0.4",
+    "203.0.113.0"
+  ],
+  "note": "Address literals are synthetic documentation/benchmark ranges. Regex scan plus visual/source review; evidence bytes unchanged."
+}

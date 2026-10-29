@@ -1,0 +1,44 @@
+{
+  "as_of": "2026-10-29T18:00:00Z",
+  "assessment_id": "demo-handoff",
+  "canonical_sha256": "c41cd41c7630a0980aeb42af403e94a43ae75c0146906901776230f5c9ebcdc3",
+  "files": {
+    "assessment.json": {
+      "bytes": 2295,
+      "sha256": "c41cd41c7630a0980aeb42af403e94a43ae75c0146906901776230f5c9ebcdc3"
+    },
+    "coverage.csv": {
+      "bytes": 457,
+      "sha256": "d992e87f3621fe184004b8c85471393cb17077a435aa9591331363b4fd278ba1"
+    },
+    "evidence/backup-export.txt": {
+      "bytes": 78,
+      "sha256": "140938dde6c12b58b2911357c21ae96d75493ac3a3457a75e7dff79aa1890bc7"
+    },
+    "evidence/capacity-export.txt": {
+      "bytes": 74,
+      "sha256": "fbf4f2952779b24f3f8527a7ba61cb485697b49e0ec5ef62573118c7fa141f20"
+    },
+    "evidence/replication-export.txt": {
+      "bytes": 87,
+      "sha256": "09a228b234416a6a5ef611c2bfa58cd5b464cb50561d617f4aecc86bf14d66c6"
+    },
+    "evidence/route-export.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "index.json": {
+      "bytes": 3764,
+      "sha256": "1c4b06515fdb8067341f3bc8e3ae92c24e36489608d411232bd7541ca09651e5"
+    },
+    "report.md": {
+      "bytes": 2963,
+      "sha256": "773fb69097861c036628ef2f98cd18c8a8ac8e727ef120645c4e34253bf17adf"
+    }
+  },
+  "input_sha256": "ce0210e84bedb6d714e9b64f9541629c8e4841f54550c1cfb96d898be305b775",
+  "result": "evidence-gaps",
+  "schema_version": 1,
+  "tool": "infrastructure-evidence-kit",
+  "version": "0.1.0"
+}

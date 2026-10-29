@@ -1,0 +1,4 @@
+asset_id,asset_label,requirement_id,requirement_title,status,evidence_id,age_seconds,max_age_hours
+dual-wan-lab,Published synthetic dual-WAN laboratory,baseline,Baseline test report,collected,baseline-record,1225,168
+dual-wan-lab,Published synthetic dual-WAN laboratory,fault,Fault test report,collected,fault-record,1167,168
+dual-wan-lab,Published synthetic dual-WAN laboratory,recovery,Recovery test report,collected,recovery-record,1113,168

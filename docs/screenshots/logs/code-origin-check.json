@@ -1,0 +1,17 @@
+{
+  "commit": "bf2287757bd86cf590c89d91f39a5b52abcded43",
+  "argv": [
+    "git",
+    "diff",
+    "--quiet",
+    "bf2287757bd86cf590c89d91f39a5b52abcded43",
+    "--",
+    "src",
+    "tests",
+    "scripts",
+    "examples",
+    "pyproject.toml"
+  ],
+  "exit_code": 0,
+  "note": "Read-only comparison of tested code and fixtures against the recorded commit. Documentation changes outside these paths are not test evidence."
+}

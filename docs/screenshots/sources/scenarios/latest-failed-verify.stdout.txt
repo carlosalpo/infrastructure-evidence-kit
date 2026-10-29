@@ -1,0 +1,6 @@
+{
+  "checked_files": 9,
+  "issues": [],
+  "scope": "file-integrity-only",
+  "valid": true
+}
