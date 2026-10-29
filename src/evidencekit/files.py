@@ -10,6 +10,10 @@ MAX_FILE = 1_000_000
 MAX_TOTAL = 16_000_000
 
 
+class SizeLimitError(InputError):
+    """A file contains more bytes than the reader's explicit limit."""
+
+
 def read_beneath(root: Path, relative: str, maximum=MAX_FILE):
     parts = relative_path(relative)
     # The caller explicitly selects the root. No child symlink may escape it.
@@ -28,7 +32,7 @@ def read_beneath(root: Path, relative: str, maximum=MAX_FILE):
             with os.fdopen(file_descriptor, "rb", closefd=False) as handle:
                 raw = handle.read(maximum + 1)
             if len(raw) > maximum:
-                raise InputError("Evidence or bundle artifact exceeds its size limit.")
+                raise SizeLimitError("Evidence or bundle artifact exceeds its size limit.")
             return raw
         finally:
             os.close(file_descriptor)

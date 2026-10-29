@@ -36,6 +36,23 @@ def test_detect_changed_evidence(bundle):
     assert "mismatch" in result["issues"][0]
 
 
+def test_verification_read_limit_uses_declared_size(bundle, monkeypatch):
+    from evidencekit.files import read_beneath
+
+    path = bundle / "evidence/route-export.txt"
+    declared = path.stat().st_size
+    path.write_bytes(b"x" * 1_000_001)
+    limits = {}
+
+    def bounded(root, name, maximum=1_000_000):
+        limits[name] = maximum
+        return read_beneath(root, name, maximum)
+
+    monkeypatch.setattr("evidencekit.verify.read_beneath", bounded)
+    assert not verify(bundle)["valid"]
+    assert limits["evidence/route-export.txt"] == declared
+
+
 @pytest.mark.parametrize("filename", ["evidence/route-export.txt", "index.json", "report.md"])
 def test_detect_missing_artifact(bundle, filename):
     (bundle / filename).unlink()

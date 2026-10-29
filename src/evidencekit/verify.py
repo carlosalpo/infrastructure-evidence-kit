@@ -5,7 +5,7 @@ import re
 import stat
 
 from . import __version__
-from .files import read_beneath
+from .files import SizeLimitError, read_beneath
 from .model import InputError, digest, fields, identifier, parse_json, timestamp
 
 REQUIRED = {"assessment.json", "index.json", "coverage.csv", "report.md"}
@@ -93,8 +93,12 @@ def verify(root):
     checked = 0
     for name, metadata in manifest["files"].items():
         try:
-            content = read_beneath(root, name, MAX_ARTIFACT)
+            content = read_beneath(root, name, metadata["bytes"])
         except FileNotFoundError:
+            continue
+        except SizeLimitError:
+            checked += 1
+            issues.append(f"Artifact bytes or hash mismatch: {name}.")
             continue
         checked += 1
         if len(content) != metadata["bytes"] or digest(content) != metadata["sha256"]:
